@@ -1,0 +1,31 @@
+MS1: .string "Lets test"
+
+
+
+
+LENGTH: .data  6,-9,15
+
+;/**/ // comment // /**/
+
+.extern Test
+
+
+MAIN: mov r3 ,r2
+K: .data 10, 12 , 13,14
+;This is a coment, !@#&%%#+!)+$
+LOOP: jmp L1
+prn #-5
+sub r6 ,  r4
+bne  Test
+
+L1:  inc K
+.string " jg 	"	j'"     hh"  	
+;/**/ // comment // /**/
+clear: clr r1 
+clr r2
+clr r3 
+clr r4
+
+.entry LOOP
+;/**/ // comment // /**/
+END: stop
