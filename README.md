@@ -1,12 +1,12 @@
-\# Two-Pass Assembler in ANSI-C (Course Assignment Submission)
+# Two-Pass Assembler in ANSI-C (Course Assignment Submission)
 
 
 
-This repository contains our \*\*two-pass assembler\*\* implementation in \*\*ANSI C\*\*, written as part of a university programming assignment. The assembler receives one or more assembly source files (`.as`), runs a \*\*macro preprocessor\*\* to generate `.am`, performs \*\*first + second pass\*\* encoding with symbol resolution, and outputs `.ob` (and `.ent` / `.ext` when relevant).
+This repository contains our **two-pass assembler** implementation in **ANSI C**, written as part of a university programming assignment. The assembler receives one or more assembly source files (`.as`), runs a **macro preprocessor** to generate `.am`, performs **first + second pass** encoding with symbol resolution, and outputs `.ob` (and `.ent` / `.ext` when relevant).
 
 
 
-\## What the program does
+## What the program does
 
 
 
@@ -14,23 +14,23 @@ For each input file `<name>.as`:
 
 
 
-1\. \*\*Preprocessor (macros)\*\*  
+1. **Preprocessor (macros)**  
 
 &nbsp;  Expands `mcro ... mcroend` definitions and replaces macro calls, producing `<name>.am`.
 
 
 
-2\. \*\*First pass\*\*  
+2. **First pass**  
 
 &nbsp;  - Parses each line (instructions / directives / labels).  
 
-&nbsp;  - Builds the \*\*symbol table\*\*.  
+&nbsp;  - Builds the **symbol table**.  
 
 &nbsp;  - Computes addresses and prepares initial encoding images.
 
 
 
-3\. \*\*Second pass\*\*  
+3. **Second pass**  
 
 &nbsp;  - Resolves symbols (including extern/entry handling).  
 
@@ -40,7 +40,7 @@ For each input file `<name>.as`:
 
 
 
-4\. \*\*Outputs\*\*
+4. **Outputs**
 
 &nbsp;  - `<name>.ob` — object file  
 
@@ -50,23 +50,23 @@ For each input file `<name>.as`:
 
 
 
-\## Supported language (as required by the assignment)
+## Supported language (as required by the assignment)
 
 
 
-\### Directives
+### Directives
 
-\- `.data` (integers)
+- `.data` (integers)
 
-\- `.string` (quoted string)
+- `.string` (quoted string)
 
-\- `.entry <label>`
+- `.entry <label>`
 
-\- `.extern <label>`
+- `.extern <label>`
 
 
 
-\### Instructions (16)
+### Instructions (16)
 
 `mov, cmp, add, sub, lea, clr, not, inc, dec, jmp, bne, jsr, red, prn, rts, stop`
 
@@ -74,27 +74,27 @@ For each input file `<name>.as`:
 
 Operand counts:
 
-\- 2 operands: `mov, cmp, add, sub, lea`
+- 2 operands: `mov, cmp, add, sub, lea`
 
-\- 1 operand: `clr, not, inc, dec, jmp, bne, jsr, red, prn`
+- 1 operand: `clr, not, inc, dec, jmp, bne, jsr, red, prn`
 
-\- 0 operands: `rts, stop`
-
-
-
-\### Addressing modes used
-
-\- Immediate: `#number`
-
-\- Direct: `LABEL`
-
-\- Relative: `\&LABEL`
-
-\- Registers: `r0` … `r7`
+- 0 operands: `rts, stop`
 
 
 
-\## Project structure
+### Addressing modes used
+
+- Immediate: `#number`
+
+- Direct: `LABEL`
+
+- Relative: `&LABEL`
+
+- Registers: `r0` … `r7`
+
+
+
+## Project structure
 
 
 
